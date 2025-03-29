@@ -1,0 +1,46 @@
+
+{
+  "app": {
+    "title": "Truth or Dare Circus",
+    "language": "Language",
+    "english": "English",
+    "french": "French"
+  },
+  "categories": {
+    "soft": "Soft",
+    "party": "Party",
+    "hot": "Hot",
+    "soft_description": "Fun with friends",
+    "party_description": "Wild and exciting",
+    "hot_description": "Spicy and intimate"
+  },
+  "setup": {
+    "add_players": "Add Players",
+    "player_name": "Player Name",
+    "add_more": "Add Player",
+    "start_game": "Start Game",
+    "min_players": "Please add at least 2 players",
+    "max_players": "Maximum 10 players",
+    "player_placeholder": "Enter name..."
+  },
+  "game": {
+    "round": "Round",
+    "of": "of",
+    "points": "Points",
+    "truth": "Truth",
+    "dare": "Dare",
+    "choose": "Choose:",
+    "completed": "Completed",
+    "failed": "Oh nooo",
+    "next": "Next",
+    "pledge": "Pledge:",
+    "congratulations": "Congratulations!",
+    "game_over": "Game Over",
+    "winner": "Winner:",
+    "loser": "Loser:",
+    "final_pledge": "Final Pledge:",
+    "back_to_menu": "Back to Menu",
+    "waiting": "Waiting for next player...",
+    "turn": "'s Turn"
+  }
+}

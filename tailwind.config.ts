@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				app: {
+					red: '#E63946',
+					white: '#FFFFFF',
+					offWhite: '#F1FAEE',
+					lightRed: '#FF8A8A',
+					darkRed: '#B31A2C',
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,42 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'bounce-light': {
+					'0%, 100%': { 
+						transform: 'translateY(0)',
+					},
+					'50%': {
+						transform: 'translateY(-5px)',
+					},
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'rotate-card': {
+					'0%': {
+						transform: 'rotateY(0deg)',
+						opacity: '0',
+					},
+					'100%': {
+						transform: 'rotateY(180deg)',
+						opacity: '1',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-light': 'bounce-light 1s ease-in-out infinite',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'rotate-card': 'rotate-card 0.4s ease-out forwards',
 			}
 		}
 	},

@@ -1,0 +1,46 @@
+
+{
+  "app": {
+    "title": "Cirque Action/Vérité",
+    "language": "Langue",
+    "english": "Anglais",
+    "french": "Français"
+  },
+  "categories": {
+    "soft": "Doux",
+    "party": "Fête",
+    "hot": "Chaud",
+    "soft_description": "Amusant entre amis",
+    "party_description": "Fou et excitant",
+    "hot_description": "Épicé et intime"
+  },
+  "setup": {
+    "add_players": "Ajouter des Joueurs",
+    "player_name": "Nom du Joueur",
+    "add_more": "Ajouter un Joueur",
+    "start_game": "Commencer",
+    "min_players": "Veuillez ajouter au moins 2 joueurs",
+    "max_players": "Maximum 10 joueurs",
+    "player_placeholder": "Entrez un nom..."
+  },
+  "game": {
+    "round": "Manche",
+    "of": "sur",
+    "points": "Points",
+    "truth": "Vérité",
+    "dare": "Action",
+    "choose": "Choisissez:",
+    "completed": "Complété",
+    "failed": "Oh non",
+    "next": "Suivant",
+    "pledge": "Gage:",
+    "congratulations": "Félicitations!",
+    "game_over": "Jeu Terminé",
+    "winner": "Gagnant:",
+    "loser": "Perdant:",
+    "final_pledge": "Gage Final:",
+    "back_to_menu": "Retour au Menu",
+    "waiting": "En attente du prochain joueur...",
+    "turn": " à son tour"
+  }
+}
