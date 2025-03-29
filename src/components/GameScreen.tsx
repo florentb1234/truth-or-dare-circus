@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import useGameStore from '@/store/GameStore';
@@ -68,13 +67,11 @@ const GameScreen: React.FC = () => {
   };
   
   const handleBackToMenu = () => {
-    if (confirm(t('game.confirm_exit'))) {
-      resetGame();
-      toast({
-        title: t('game.game_ended'),
-        description: t('game.back_to_menu_message')
-      });
-    }
+    resetGame();
+    toast({
+      title: t('game.game_ended'),
+      description: t('game.back_to_menu_message')
+    });
   };
   
   return (
