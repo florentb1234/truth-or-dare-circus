@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import useGameStore from '@/store/GameStore';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -17,7 +18,9 @@ const GameScreen: React.FC = () => {
     currentRound,
     totalRounds,
     gameCompleted,
-    resetGame
+    resetGame,
+    language,
+    lastChallenge
   } = useGameStore();
   const t = useTranslation();
   
@@ -29,6 +32,17 @@ const GameScreen: React.FC = () => {
   const [pledgeContent, setPledgeContent] = useState('');
   
   const currentPlayer = players[currentPlayerIndex];
+  
+  // Effect to update UI state when language changes
+  useEffect(() => {
+    if (lastChallenge.content) {
+      if (lastChallenge.type === 'truth' || lastChallenge.type === 'dare') {
+        setChallengeContent(lastChallenge.content);
+      } else if (lastChallenge.type === 'pledge') {
+        setPledgeContent(lastChallenge.content);
+      }
+    }
+  }, [language, lastChallenge]);
   
   if (gameCompleted) {
     return <GameComplete />;

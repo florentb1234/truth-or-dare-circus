@@ -72,7 +72,9 @@ const useGameStore = create<GameState>()(
       setCategory: (category) => set({ category }),
       
       setLanguage: (language) => {
-        // Reset used challenges when language changes to force new selections
+        const { lastChallenge, category } = get();
+        
+        // Reset used challenges to force new selections in new language
         set({ 
           language,
           usedChallenges: {
@@ -80,11 +82,31 @@ const useGameStore = create<GameState>()(
             dares: [],
             pledges: [],
           },
-          lastChallenge: {
-            type: null,
-            content: null,
-          }
         });
+        
+        // If there's an active challenge, refresh it with a new one in the selected language
+        if (lastChallenge.type && category) {
+          // For truth or dare challenges
+          if (lastChallenge.type === 'truth' || lastChallenge.type === 'dare') {
+            const newChallenge = get().getChallenge(lastChallenge.type);
+            set(state => ({
+              lastChallenge: {
+                ...state.lastChallenge,
+                content: newChallenge
+              }
+            }));
+          } 
+          // For pledge challenges
+          else if (lastChallenge.type === 'pledge') {
+            const newPledge = get().getPledge();
+            set(state => ({
+              lastChallenge: {
+                ...state.lastChallenge,
+                content: newPledge
+              }
+            }));
+          }
+        }
       },
       
       addPlayer: (name) => {
