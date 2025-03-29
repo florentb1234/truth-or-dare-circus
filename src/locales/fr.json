@@ -21,7 +21,8 @@
     "start_game": "Commencer",
     "min_players": "Veuillez ajouter au moins 2 joueurs",
     "max_players": "Maximum 10 joueurs",
-    "player_placeholder": "Entrez un nom..."
+    "player_placeholder": "Entrez un nom...",
+    "remove_player": "Supprimer le joueur"
   },
   "game": {
     "round": "Manche",
@@ -41,6 +42,9 @@
     "final_pledge": "Gage Final:",
     "back_to_menu": "Retour au Menu",
     "waiting": "En attente du prochain joueur...",
-    "turn": " à son tour"
+    "turn": " à son tour",
+    "confirm_exit": "Êtes-vous sûr de vouloir terminer le jeu et revenir au menu?",
+    "game_ended": "Jeu Terminé",
+    "back_to_menu_message": "Vous êtes revenu au menu principal"
   }
 }

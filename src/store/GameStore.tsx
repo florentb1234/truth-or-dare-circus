@@ -1,4 +1,3 @@
-
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import softChallenges from '../data/challenges/soft.json';
@@ -72,7 +71,21 @@ const useGameStore = create<GameState>()(
 
       setCategory: (category) => set({ category }),
       
-      setLanguage: (language) => set({ language }),
+      setLanguage: (language) => {
+        // Reset used challenges when language changes to force new selections
+        set({ 
+          language,
+          usedChallenges: {
+            truths: [],
+            dares: [],
+            pledges: [],
+          },
+          lastChallenge: {
+            type: null,
+            content: null,
+          }
+        });
+      },
       
       addPlayer: (name) => {
         if (!name) return;

@@ -69,6 +69,7 @@ const PlayerSetup: React.FC = () => {
         <Button 
           onClick={handleAddPlayer}
           className="bg-app-red hover:bg-app-darkRed"
+          aria-label={t('setup.add_more')}
         >
           <Plus size={20} />
         </Button>
@@ -91,6 +92,7 @@ const PlayerSetup: React.FC = () => {
                 size="sm" 
                 onClick={() => removePlayer(index)}
                 className="text-gray-500 hover:text-app-red"
+                aria-label={t('setup.remove_player')}
               >
                 <X size={16} />
               </Button>

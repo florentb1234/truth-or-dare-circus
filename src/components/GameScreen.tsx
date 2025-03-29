@@ -8,6 +8,8 @@ import TruthOrDareSelection from './TruthOrDareSelection';
 import ChallengeDisplay from './ChallengeDisplay';
 import PledgeDisplay from './PledgeDisplay';
 import GameComplete from './GameComplete';
+import { Home } from 'lucide-react';
+import { toast } from '@/components/ui/use-toast';
 
 const GameScreen: React.FC = () => {
   const { 
@@ -15,7 +17,8 @@ const GameScreen: React.FC = () => {
     currentPlayerIndex, 
     currentRound,
     totalRounds,
-    gameCompleted
+    gameCompleted,
+    resetGame
   } = useGameStore();
   const t = useTranslation();
   
@@ -64,6 +67,16 @@ const GameScreen: React.FC = () => {
     setSelectedChallenge(null);
   };
   
+  const handleBackToMenu = () => {
+    if (confirm(t('game.confirm_exit'))) {
+      resetGame();
+      toast({
+        title: t('game.game_ended'),
+        description: t('game.back_to_menu_message')
+      });
+    }
+  };
+  
   return (
     <motion.div 
       className="w-full max-w-xl mx-auto"
@@ -79,6 +92,15 @@ const GameScreen: React.FC = () => {
           {currentPlayer?.points} {t('game.points')}
         </div>
       </div>
+      
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={handleBackToMenu}
+        className="mb-4 text-app-red hover:bg-app-red hover:text-white"
+      >
+        <Home size={16} className="mr-2" /> {t('game.back_to_menu')}
+      </Button>
       
       {showingTruthOrDare && (
         <TruthOrDareSelection 

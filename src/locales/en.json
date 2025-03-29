@@ -21,7 +21,8 @@
     "start_game": "Start Game",
     "min_players": "Please add at least 2 players",
     "max_players": "Maximum 10 players",
-    "player_placeholder": "Enter name..."
+    "player_placeholder": "Enter name...",
+    "remove_player": "Remove player"
   },
   "game": {
     "round": "Round",
@@ -41,6 +42,9 @@
     "final_pledge": "Final Pledge:",
     "back_to_menu": "Back to Menu",
     "waiting": "Waiting for next player...",
-    "turn": "'s Turn"
+    "turn": "'s Turn",
+    "confirm_exit": "Are you sure you want to end the game and return to the menu?",
+    "game_ended": "Game Ended",
+    "back_to_menu_message": "You've returned to the main menu"
   }
 }
