@@ -8,7 +8,8 @@ import TruthOrDareSelection from './TruthOrDareSelection';
 import ChallengeDisplay from './ChallengeDisplay';
 import PledgeDisplay from './PledgeDisplay';
 import GameComplete from './GameComplete';
-import { Home } from 'lucide-react';
+import PlayerScoreboard from './PlayerScoreboard';
+import { Home, Crown, Party } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 
 const GameScreen: React.FC = () => {
@@ -96,11 +97,12 @@ const GameScreen: React.FC = () => {
       transition={{ duration: 0.3 }}
     >
       <div className="flex justify-between items-center mb-4 px-4">
-        <div className="text-gray-700 font-medium">
+        <div className="text-gray-700 font-medium flex items-center">
+          <Crown className="text-yellow-500 mr-2" size={18} />
           {t('game.round')} {currentRound} {t('game.of')} {totalRounds}
         </div>
-        <div className="text-app-red font-medium">
-          {currentPlayer?.points} {t('game.points')}
+        <div className="text-app-red font-medium flex items-center">
+          {currentPlayer?.points} {t('game.points')} 🏆
         </div>
       </div>
       
@@ -134,6 +136,12 @@ const GameScreen: React.FC = () => {
           onComplete={handleNext}
         />
       )}
+      
+      {/* Player Scoreboard */}
+      <PlayerScoreboard 
+        players={players} 
+        currentPlayerIndex={currentPlayerIndex} 
+      />
     </motion.div>
   );
 };
